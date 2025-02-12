@@ -5,7 +5,11 @@
 # Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/LICENSE
                        
   
-START_TEXT = 'Heya,\nMy name is **Countdown Timer** ⏰\n\nI can countdown to your important events in **any group chat**. 🎉\nUse me to keep track of how much time is left for the event ⏳\n\nHit **❓HELP** to find out more about how to use me.'
+Here’s a more unique and engaging start text with emojis:
+
+START_TEXT =🎉 Hey there, champ! ⏳\nI'm **Countdown Timer Bot** ⏰, your personal timekeeper!\n\Got an important event coming up? 🎯\n\nI'll track the time for you in **any group chat** and let you know when the big moment arrives! 🎊\n\nJust set the countdown, sit back, and let me handle the ticking! ⏰✨
+
+
 
 GROUP_TEXT="""
 👥 | **HELP & SUPPORT**
