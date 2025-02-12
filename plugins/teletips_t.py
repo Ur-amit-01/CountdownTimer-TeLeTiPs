@@ -2,12 +2,18 @@
 #You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
 # ##Credits - [Countdown Timer Telegram bot by TeLe TiPs] (https://github.com/teletips/CountdownTimer-TeLeTiPs)
 
-# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/LICENSE
-                       
-  
-Here’s a more unique and engaging start text with emojis:
+# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/
 
-START_TEXT =🎉 Hey there, champ! ⏳\nI'm **Countdown Timer Bot** ⏰, your personal timekeeper!\n\Got an important event coming up? 🎯\n\nI'll track the time for you in **any group chat** and let you know when the big moment arrives! 🎊\n\nJust set the countdown, sit back, and let me handle the ticking! ⏰✨
+START_TEXT ="""
+**🎉 Hey there, champ! ⏳
+I'm **Countdown Timer Bot** ⏰, your personal timekeeper!
+
+Got an important event coming up? 🎯
+I'll track the time for you in any group chat and let you know when the big moment arrives! 🎊
+
+Just set the countdown, sit back, and let me handle the ticking! ⏰✨**
+
+"""
 
 
 
