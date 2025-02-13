@@ -14,7 +14,7 @@ from pyrogram.raw.functions.messages import UpdatePinnedMessage
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-footer_message = os.environ["FOOTER_MESSAGE"]
+FOOTER_MESSAGE = os.environ["FOOTER_MESSAGE"]
 
 # MongoDB Setup
 MONGO_URI = os.environ["MONGO_URI"]
