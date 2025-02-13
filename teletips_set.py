@@ -2,9 +2,13 @@ import os
 import asyncio
 import time
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, MessageNotModified
 from motor.motor_asyncio import AsyncIOMotorClient
+
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from plugins.teletips_t import *
+from pyrogram.errors import FloodWait, MessageNotModified
+from pyrogram.raw.functions.messages import UpdatePinnedMessage
 
 # Bot Configuration
 API_ID = int(os.environ["API_ID"])
