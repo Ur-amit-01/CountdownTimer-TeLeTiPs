@@ -13,7 +13,7 @@ BOT_TOKEN = os.environ["BOT_TOKEN"]
 FOOTER_MESSAGE = os.environ["FOOTER_MESSAGE"]
 
 # MongoDB Setup
-MONGO_URI = "mongodb+srv://your_mongodb_uri"
+MONGO_URI = os.environ["MONGO_URI"]
 mongo_client = AsyncIOMotorClient(MONGO_URI)
 db = mongo_client["countdown_db"]
 countdowns = db["countdowns"]
