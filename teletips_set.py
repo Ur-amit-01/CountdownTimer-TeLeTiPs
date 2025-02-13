@@ -133,11 +133,7 @@ async def resume_countdowns():
             await countdowns.delete_one({"chat_id": chat_id, "msg_id": msg_id})
 
 print("Countdown Timer is alive!")
-
-async def main():
-    await bot.start()
-    await resume_countdowns()
-    await bot.idle()
+bot.run()
 
 if __name__ == "__main__":
     asyncio.run(main())
