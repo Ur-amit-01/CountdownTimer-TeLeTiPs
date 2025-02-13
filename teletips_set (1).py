@@ -10,7 +10,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-FOOTER_MESSAGE = os.environ["FOOTER_MESSAGE"]
+footer_message = os.environ["FOOTER_MESSAGE"]
 
 # MongoDB Setup
 MONGO_URI = os.environ["MONGO_URI"]
@@ -27,7 +27,6 @@ bot = Client(
 
 stoptimer = False
 
-# Main Menu Buttons
 TELETIPS_MAIN_MENU_BUTTONS = [
     [
         InlineKeyboardButton("👨‍💻 DEVELOPER", url="https://t.me/axa_bachha"),
