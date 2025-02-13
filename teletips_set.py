@@ -2,7 +2,7 @@ import os
 import asyncio
 import time
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, MessageNotModified
 from motor.motor_asyncio import AsyncIOMotorClient
 
@@ -62,7 +62,7 @@ async def countdown_task(chat_id, msg_id, end_time, event_text):
     await countdowns.delete_one({"chat_id": chat_id, "msg_id": msg_id})
 
 @bot.on_message(filters.command("set"))
-async def set_timer(client, message):
+async def set_timer(client, message: Message):
     global stoptimer
     try:
         if message.chat.id > 0:
@@ -83,16 +83,16 @@ async def set_timer(client, message):
         msg = await message.reply(f"⏳ Countdown Started for {countdown_time} seconds!")
 
         await countdowns.insert_one(
-            {"chat_id": message.chat.id, "msg_id": msg.message_id, "end_time": end_time, "event_text": event_text}
+            {"chat_id": message.chat.id, "msg_id": msg.id, "end_time": end_time, "event_text": event_text}
         )
 
-        asyncio.create_task(countdown_task(message.chat.id, msg.message_id, end_time, event_text))
+        asyncio.create_task(countdown_task(message.chat.id, msg.id, end_time, event_text))
 
     except Exception as e:
         await message.reply(f"Error: {str(e)}")
 
 @bot.on_message(filters.command("stopc"))
-async def stop_timer(client, message):
+async def stop_timer(client, message: Message):
     global stoptimer
     user = await bot.get_chat_member(message.chat.id, message.from_user.id)
     if not user.privileges:
@@ -102,12 +102,12 @@ async def stop_timer(client, message):
     await message.reply("🛑 Countdown stopped.")
 
 @bot.on_message(filters.command("clearcountdowns"))
-async def clear_all_countdowns(_, message):
+async def clear_all_countdowns(_, message: Message):
     await countdowns.delete_many({})
     await message.reply("✅ All countdowns cleared!")
 
 @bot.on_message(filters.command("listcountdowns"))
-async def list_active_countdowns(_, message):
+async def list_active_countdowns(_, message: Message):
     active_countdowns = await countdowns.find().to_list(length=100)
     if not active_countdowns:
         return await message.reply("No active countdowns.")
@@ -134,7 +134,3 @@ async def resume_countdowns():
 
 print("Countdown Timer is alive!")
 bot.run()
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
